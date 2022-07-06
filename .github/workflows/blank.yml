@@ -35,3 +35,8 @@ jobs:
           git describe --tags --always --abbrev=0
           git describe --tags --always
           echo ${{ env.version }}
+      
+      - uses: rickstaa/action-create-tag@v1
+        with:
+          tag: ${{ env.version }} 
+          message: "Latest release"
